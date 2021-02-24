@@ -17,6 +17,8 @@
     grid-template-columns: 1fr 1fr;
     gap: 6.25rem;
 
+    margin: 2rem auto 1rem;
+
     align-content: center;
 }
 
