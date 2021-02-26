@@ -21,15 +21,21 @@ interface ChallengesContextData {
 }
 
 interface ChallengesProviderProps {
-    children: ReactNode
+    children: ReactNode;
+    level: number;
+    currentXp: number;
+    challengesCompleted: number;
 }
 
 export const ChallengesContext = createContext({} as ChallengesContextData);
 
-export function ChallengesProvider({ children }: ChallengesProviderProps) {
-    const [level, setLevel] = useState(1)
-    const [currentXp, setCurrentXp] = useState(0)
-    const [challengesCompleted, setchallengesCompleted] = useState(0)
+export function ChallengesProvider({ 
+    children ,
+    ...rest
+}: ChallengesProviderProps) {
+    const [level, setLevel] = useState(rest.level ?? 1)
+    const [currentXp, setCurrentXp] = useState(rest.currentXp ?? 0)
+    const [challengesCompleted, setchallengesCompleted] = useState(rest.challengesCompleted ?? 0)
     const [activeChallenge, setActiveChallenge] = useState(null)
     const xpForNextLevel = Math.pow((level+1)*4,2)
 
