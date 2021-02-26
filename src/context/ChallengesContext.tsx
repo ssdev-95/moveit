@@ -1,5 +1,6 @@
 import { createContext, useState, ReactNode, useEffect } from 'react';
 import challenges from '../../challenges.json';
+import { LevelUPModal } from '../components/LevelUpModal';
 import Cookies from 'js-cookie';
 
 interface Challenge {
@@ -18,6 +19,7 @@ interface ChallengesContextData {
     activeChallenge: Challenge;
     resetChallenge:() => void;
     completeChallenge:() => void;
+    closeLevelUpModal:() => void;
 }
 
 interface ChallengesProviderProps {
@@ -39,6 +41,8 @@ export function ChallengesProvider({
     const [activeChallenge, setActiveChallenge] = useState(null)
     const xpForNextLevel = Math.pow((level+1)*4,2)
 
+    const [isLevelUpModalOpen, setIsLevelUpModalOpen] = useState(false)
+
     useEffect(() => {
         Notification.requestPermission()
     }, [])
@@ -51,6 +55,11 @@ export function ChallengesProvider({
   
     function levelUp() {
       setLevel(level + 1)
+      setIsLevelUpModalOpen(true)
+    }
+
+    function closeLevelUpModal() {
+        setIsLevelUpModalOpen(false)
     }
 
     function startNewChallenge() {
@@ -99,9 +108,11 @@ export function ChallengesProvider({
             startNewChallenge,
             activeChallenge,
             resetChallenge,
-            completeChallenge
+            completeChallenge,
+            closeLevelUpModal
         }}>
             { children }
+            { isLevelUpModalOpen && <LevelUPModal /> }
         </ChallengesContext.Provider>
     );
 }

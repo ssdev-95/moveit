@@ -13,7 +13,7 @@
     align-items: center;
     justify-content: space-evenly;
 
-    background: var(--white);
+    background: #fff;
     box-shadow: 0 0 60px rgba(0,0,0,.05);
     border-radius: 5px;
 
@@ -52,7 +52,7 @@
     border-radius: 5px;
 
     background: var(--blue);
-    color: var(--white);
+    color: #fff;
 
     font-size: 1.25rem;
     font-weight: 600;
@@ -65,7 +65,7 @@
 }
 
 .countdownButtonActive {
-    background: var(--white);
+    background: #fff;
     color: var(--title);
 
     border-bottom: 2px solid var(--green);
@@ -73,13 +73,13 @@
 
 .countdownButtonActive:not(:disabled):hover {
     background: var(--red);
-    color: var(--white)var(--white);
+    color: #fff;
     border-bottom: 2px solid var(--red);
 }
 
 .countdownButton:disabled {
     cursor: not-allowed;
-    background: var(--white);
+    background: #fff;
     color: var(--title);
     border-bottom: 2px solid var(--green);
 }
