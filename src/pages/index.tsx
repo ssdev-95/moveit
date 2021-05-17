@@ -13,11 +13,7 @@ import Head from 'next/head';
 
 import style from '../styles/pages/Home.module.css';
 
-interface HomeProps {
-  level: number;
-  currentXp: number;
-  challengesCompleted: number;
-}
+import { HomeProps } from '../types'
 
 export default function Home(props: HomeProps) {
   //console.log(props)
