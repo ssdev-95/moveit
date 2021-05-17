@@ -1,6 +1,6 @@
 import { useContext } from 'react';
-import { CountdownContext } from '../context/CountdownContext';
-import style from '../styles/components/Countdown.module.css';
+import { CountdownContext } from '@/context/CountdownContext';
+import style from '@/styles/components/Countdown.module.css';
 
 export function Countdown() {
     const { minutes,

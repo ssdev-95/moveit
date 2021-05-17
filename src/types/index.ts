@@ -17,7 +17,7 @@ export interface ChallengesContextData {
     challengesCompleted:number;
     xpForNextLevel:number;
     levelUp:() => void;
-    startNewChallenge:() => void;
+    startNewChallenge:() => Promise<void>;
     activeChallenge: Challenge;
     resetChallenge:() => void;
     completeChallenge:() => void;

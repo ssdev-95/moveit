@@ -1,7 +1,7 @@
 import { createContext, useState, useEffect, useContext } from 'react';
-import { ChallengesContext } from '../context/ChallengesContext';
+import { ChallengesContext } from '@/context/ChallengesContext';
 
-import { CountdownContextData, CountdownProviderProps } from '../types'
+import { CountdownContextData, CountdownProviderProps } from '@/types'
 
 export const CountdownContext = createContext({} as CountdownContextData);
 
@@ -35,12 +35,12 @@ export function CountdownProvider({ children }: CountdownProviderProps) {
             countdownTimeout=setTimeout(() => {
                 setTime(time-1)
             }, 1000)
-        } else if(isActive && time==0) {
+        } else if(isActive && time==0) {async()=>{
             sethasFinished(true)
             setTime(initTime)
             resetCountdown()
-            startNewChallenge()
-        }
+            await startNewChallenge()
+        }}
     }, [isActive, time])
 
     return (

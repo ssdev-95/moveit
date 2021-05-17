@@ -1,19 +1,19 @@
-import { Profile } from '../components/Profile';
-import { Experiencebar } from '../components/Experiencebar';
-import { CompletedChallenges } from '../components/CompletedChallenges';
-import { Countdown } from '../components/Countdown';
-import { ChallengeBox } from '../components/ChallengeBox';
+import { Profile } from '@/components/Profile';
+import { Experiencebar } from '@/components/Experiencebar';
+import { CompletedChallenges } from '@/components/CompletedChallenges';
+import { Countdown } from '@/components/Countdown';
+import { ChallengeBox } from '@/components/ChallengeBox';
 
-import { CountdownProvider } from '../context/CountdownContext';
-import { ChallengesProvider } from '../context/ChallengesContext';
+import { CountdownProvider } from '@/context/CountdownContext';
+import { ChallengesProvider } from '@/context/ChallengesContext';
 
 import { GetServerSideProps } from 'next';
 
 import Head from 'next/head';
 
-import style from '../styles/pages/Home.module.css';
+import style from '@/styles/pages/Home.module.css';
 
-import { HomeProps } from '../types'
+import { HomeProps } from '@/types'
 
 export default function Home(props: HomeProps) {
   //console.log(props)
@@ -47,6 +47,7 @@ export default function Home(props: HomeProps) {
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const { level, currentXp, challengesCompleted } = ctx.req.cookies;
+
   return {
     props: {
       level: Number(level),

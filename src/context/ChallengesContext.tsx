@@ -1,9 +1,11 @@
 import { createContext, useState, useEffect } from 'react';
 import challenges from '../../challenges.json';
-import { LevelUPModal } from '../components/LevelUpModal';
+import { LevelUPModal } from '@/components/LevelUpModal';
 import Cookies from 'js-cookie';
 
-import { ChallengesContextData, ChallengesProviderProps } from '../types'
+import axios from 'axios'
+
+import { ChallengesContextData, ChallengesProviderProps } from '@/types'
 
 export const ChallengesContext = createContext({} as ChallengesContextData);
 
@@ -38,7 +40,12 @@ export function ChallengesProvider({
         setIsLevelUpModalOpen(false)
     }
 
-    function startNewChallenge() {
+    async function startNewChallenge() {
+        const URI = process.env.API_URI
+        const newChallenge = await axios.get(URI)
+
+        console.log(newChallenge.data)
+
         const randomChallengeIndex = Math.floor(Math.random() * challenges.length);
         const challenge = challenges[randomChallengeIndex];
 
