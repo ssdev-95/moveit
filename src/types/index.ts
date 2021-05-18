@@ -1,51 +1,30 @@
-import { ReactNode } from 'react'
+import { ReactNode } from "react";
 
 export interface Challenge {
-    "type": string,
-    "description": string,
-    "amount": number,
-    "price": number,
-    "accessibility": number,
-    "participants": number,
-    "link": string,
-    "key": string
-  }
-
-export interface ChallengesContextData {
-    level:number;
-    currentXp:number;
-    challengesCompleted:number;
-    xpForNextLevel:number;
-    levelUp:() => void;
-    startNewChallenge:() => Promise<void>;
-    activeChallenge: Challenge;
-    resetChallenge:() => void;
-    completeChallenge:() => void;
-    closeLevelUpModal:() => void;
+  type: string;
+  description: string;
+  amount: number;
+  price: number;
+  accessibility: number;
+  participants: number;
+  link: string;
+  key: string;
 }
+
+export interface ChallengesContextData {}
 
 export interface ChallengesProviderProps {
-    children: ReactNode;
-    level: number;
-    currentXp: number;
-    challengesCompleted: number;
+  children: ReactNode;
 }
 
-export interface CountdownContextData {
-    minutes:number;
-    seconds:number;
-    hasFinished:boolean;
-    isActive:boolean;
-    startCountdown:() => void;
-    resetCountdown:() => void;
-}
+export interface CountdownContextData {}
 
 export interface CountdownProviderProps {
-    children: ReactNode
+  children: ReactNode;
 }
 
 export interface HomeProps {
-    level: number;
-    currentXp: number;
-   challengesCompleted: number;
+  level: number;
+  currentXp: number;
+  challengesCompleted: number;
 }

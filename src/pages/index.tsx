@@ -1,47 +1,20 @@
-import { Profile } from '@/components/Profile';
-import { Experiencebar } from '@/components/Experiencebar';
-import { CompletedChallenges } from '@/components/CompletedChallenges';
-import { Countdown } from '@/components/Countdown';
-import { ChallengeBox } from '@/components/ChallengeBox';
-
-import { CountdownProvider } from '@/context/CountdownContext';
-import { ChallengesProvider } from '@/context/ChallengesContext';
-
 import { GetServerSideProps } from 'next';
-
 import Head from 'next/head';
 
-import style from '@/styles/pages/Home.module.css';
+import Experiencebar from '@/components/Experiencebar'
 
 import { HomeProps } from '@/types'
 
+import { Container } from '@/pages/home.style'
+
 export default function Home(props: HomeProps) {
-  //console.log(props)
   return (
-    <ChallengesProvider
-    level={props.level}
-    currentXp={props.currentXp}
-    challengesCompleted={props.challengesCompleted}
-    >
-      <div className={style.container}>
+      <Container>
         <Head>
-          <title>Init | move.it</title>
+          <title>Move.it</title>
         </Head>
         <Experiencebar />
-        <CountdownProvider>
-          <section>
-            <div>
-              <Profile />
-              <CompletedChallenges />
-              <Countdown />
-            </div>
-            <div>
-              <ChallengeBox />
-            </div>
-          </section>
-        </CountdownProvider>
-      </div>
-    </ChallengesProvider>
+      </Container>
   )
 }
 
