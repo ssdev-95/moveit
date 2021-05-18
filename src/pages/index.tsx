@@ -2,6 +2,7 @@ import { GetServerSideProps } from 'next';
 import Head from 'next/head';
 
 import Experiencebar from '@/components/Experiencebar'
+import Dashboard from '@/components/Dashboard';
 
 import { HomeProps } from '@/types'
 
@@ -14,6 +15,7 @@ export default function Home(props: HomeProps) {
           <title>Move.it</title>
         </Head>
         <Experiencebar />
+        <Dashboard />
       </Container>
   )
 }
