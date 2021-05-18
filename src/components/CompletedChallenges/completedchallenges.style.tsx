@@ -1,17 +1,14 @@
 import styled from 'styled-components'
-import colors from 'root/colors.json'
+import { gray_line } from 'root/colors.json'
 
-// .completedChallengesContainer {
-//     display: flex;
-//     align-items: center;
-//     justify-content: space-between;
+export const CompletedChallengesContainer = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid ${gray_line};
 
-//     margin: 3.5rem 0;
-//     padding-bottom: 1rem;
-//     border-bottom: 1px solid #d7d8da;
-
-//     font-weight: 500;
-// }
+    font-weight: 500;
+`
 
 // .completedChallengesContainer span:first-child {
 //     font-size: 1.5rem;
