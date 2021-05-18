@@ -7,7 +7,7 @@ export default function Experiencebar() {
     <Header>
       <span>0 xp</span>
       <Bar>
-        <Progress />
+        <Progress style={{ width: `${(currentXP/nextLevelXP)*100}%` }} />
       </Bar>
       <span>{nextLevelXP} xp</span>
       <CurrentExperience>{currentXP} xp</CurrentExperience>
