@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { GetServerSideProps } from 'next';
 import Head from 'next/head';
 
@@ -9,8 +10,10 @@ import { HomeProps } from '@/types'
 import { Container } from '@/pages/home.style'
 
 export default function Home(props: HomeProps) {
+  const [isLevelUp, setIsLevelUp] = useState(true)
+
   return (
-      <Container>
+    <Container>
         <Head>
           <title>Move.it</title>
         </Head>
