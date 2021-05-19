@@ -6,8 +6,8 @@ import { DashContainer } from '@/components/Dashboard/dash.style'
 export default function Dashboard() {
     return(
         <DashContainer>
-            <ChallengeBox />
             <Profile />
+            <ChallengeBox />
         </DashContainer>
     )
 }
