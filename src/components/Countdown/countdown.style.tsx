@@ -1,13 +1,55 @@
 import styled from 'styled-components'
-import colors from 'root/colors.json'
+import { title, white } from 'root/colors.json'
 
-// .countdownContainer {
-//     display: flex;
-//     align-items: center;
-//     font-family: 'Rajdhani';
-//     font-weight: 600;
-//     color: var(--title);
-// }
+export const CountdownContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    font-weight: 600;
+    color: ${title};
+    height: 100%;
+`
+
+export const Timer = styled.div`
+    height: 144px;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: 'Rajdhani';
+    font-weight: 600;
+
+    p {
+        margin: 0 1.8rem;
+
+        font-size: 7rem;
+        line-height: 0;
+    }
+`
+
+export const Digit = styled.div`
+    height: 100%;
+    width: 5rem;
+    background: ${white};
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    span {
+        font-size: 7rem;
+    }
+`
+export const Button = styled.button`
+    width: 389px;
+    height: 80px;
+
+    border: none;
+    border-radius: 6px;
+`
 
 // .countdownContainer > div {
 //     flex: 1;
