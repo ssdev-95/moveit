@@ -1,71 +1,82 @@
 import styled from 'styled-components'
-import colors from 'root/colors.json'
+import { half_black , half_white, red, white, blue, blue_dark, blue_twitter } from 'root/colors.json'
 
-// .overlay {
-//     background: rgba(242, 243, 245, .8);
-//     position: fixed;
+export const Overlay = styled.div`
+    background: ${half_white};
+    position: absolute;
 
-//     top:0;
-//     bottom:0;
-//     left:0;
-//     right:0;
+    top:0;
+    left:0;
 
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-// }
+    width: 100vw;
+    height: 100vh;
 
-// .container {
-//     background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`
 
-//     width: 100%;
-//     max-width: 400px;
-//     padding: 2rem 3rem;
-//     border-radius: 10px;
-//     box-shadow: 0 0 60 rgba(0,0,0,.05);
-//     text-align: center;
+export const Modal = styled.div`
+    background-image: url('icons/levelup.svg');
+    background-repeat: no-repeat;
+    background-position: 52% 25%;
+    background-color: ${white};
 
-//     position: relative;
-// }
+    height: 364px;
+    width: 397px;
+    max-width: 90%;
 
-// .container header {
-//     font-size: 8.75rem;
-//     font-weight: 600;
-//     color: var(--blue);
+    padding: 2rem 3rem;
 
-//     background: url('/icons/levelup.svg') no-repeat center;
-//     background-size: contain;
-// }
+    border-radius: 10px;
+    box-shadow: 0 0 60 ${half_black};
+    text-align: center;
 
-// .container strong {
-//     font-size: 2.25rem;
-//     color: var(--title);
-// }
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 
-// .container p {
-//     font-size: 1.25rem;
-//     color: var(--text);
-//     margin-top: 0.25rem;
-// }
+    h6 {
+        color:${blue};
+        font-size: 6rem;
+    }
 
-// .container button {
-//     position: absolute;
-//     right: .5rem;
-//     top: .5rem;
+    button {
+        background: ${blue_twitter};
 
-//     background: transparent;
-//     border: 0;
+        width: 297px;
+        height: 50px;
 
-//     font-size: 0;
-// }
+        display: flex;
+        gap: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-// @media(max-width: 800px) {
-//     .container {
-//         max-width: 80%;
-//         height: 45%;
-//     }
+        border: none;
+        border-radius: 6px;
 
-//     .container header {
-//         margin: 1.5rem auto;
-//     }
-// }
+        &:hover {
+            background: ${blue_dark};
+        }
+        
+        span {
+            color: white;
+        }
+    }
+
+    p {
+        position: absolute;
+        top: 1.48rem;
+        right: 1.68rem;
+        font-family: 'Rajdhani';
+        font-size: 1.18rem;
+        cursor: pointer;
+
+        &:hover {
+            color: ${red};
+        }
+    }
+`
