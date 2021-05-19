@@ -9,5 +9,7 @@
   "green": "#4cd62b",
   "blue": "#5965e0",
   "blue_dark": "#4953b8",
-  "blue_twitter": "#2aa9e0"
+  "blue_twitter": "#2aa9e0",
+  "half_white": "rgba(242, 243, 245, .8)",
+  "half_black": "rgba(0, 0, 0, .48)"
 }
