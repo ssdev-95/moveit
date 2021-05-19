@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { red, green, text_highlight, text } from 'root/colors.json'
+import { green, text_highlight, text } from 'root/colors.json'
 
 export const Header = styled.header`
     width: 100%;
@@ -7,7 +7,6 @@ export const Header = styled.header`
     display: flex;
     align-items: center;
     justify-content: center;
-    border-bottom: 1px solid ${red};
     position: relative;
     gap: 0.65rem;
 
