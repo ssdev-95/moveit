@@ -8,18 +8,22 @@ import Dashboard from '@/components/Dashboard';
 import { HomeProps } from '@/types'
 
 import { Container } from '@/pages/home.style'
+import LevelUPModal from '@/components/LevelUpModal';
 
 export default function Home(props: HomeProps) {
   const [isLevelUp, setIsLevelUp] = useState(true)
 
   return (
     <Container>
-        <Head>
-          <title>Move.it</title>
-        </Head>
-        <Experiencebar />
-        <Dashboard />
-      </Container>
+      {
+        isLevelUp && <LevelUPModal />
+      }
+      <Head>
+        <title>Move.it</title>
+      </Head>
+      <Experiencebar />
+      <Dashboard />
+    </Container>
   )
 }
 
