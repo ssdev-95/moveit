@@ -9,7 +9,9 @@ export default function Profile() {
     const user = {
         name: 'Salomao de Souza',
         picURI: 'https://github.com/xSallus.png',
-        currentLevel: 1
+        currentLevel: 1,
+        completedChallenges: 0
+
     }
 
     return(
@@ -24,7 +26,9 @@ export default function Profile() {
                     </div>
                 </div>
             </Avatar>
-            <CompletedChallenges />
+            <CompletedChallenges
+              challengesCompleted={user.completedChallenges}
+            />
             <Countdown />
         </ProfileContainer>
     );
