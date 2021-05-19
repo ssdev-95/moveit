@@ -28,3 +28,7 @@ export interface HomeProps {
   currentXp: number;
   challengesCompleted: number;
 }
+
+export interface ChallengesCompletedProps {
+  challengesCompleted: number;
+}
