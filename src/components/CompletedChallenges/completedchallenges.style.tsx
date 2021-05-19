@@ -6,14 +6,15 @@ export const CompletedChallengesContainer = styled.div`
     align-items: center;
     justify-content: space-between;
     border-bottom: 1px solid ${gray_line};
-
     font-weight: 500;
+
+    padding: 1rem 0;
+
+    span:first-child {
+        font-size: 1.25rem;
+    }
+    
+    span:last-child {
+        font-size: 1rem;
+    }
 `
-
-// .completedChallengesContainer span:first-child {
-//     font-size: 1.5rem;
-// }
-
-// .completedChallengesContainer span:last-child {
-//     font-size: 1rem;
-// }
