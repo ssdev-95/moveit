@@ -23,7 +23,7 @@ export default function Countdown() {
                 </Digit>
             </Timer>
             <Button>
-                <span>Initiate a cycle</span>
+                <span>Begin a cycle</span>
                 <img src="icons/arrow.svg" alt="Button icon" />
             </Button>
         </CountdownContainer>
