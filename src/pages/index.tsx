@@ -1,17 +1,19 @@
-import { useState } from 'react';
+import React from 'react';
 import { GetServerSideProps } from 'next';
 import Head from 'next/head';
 
 import Experiencebar from '@/components/Experiencebar'
 import Dashboard from '@/components/Dashboard';
+import LevelUPModal from '@/components/LevelUpModal';
+
+import useModal from '@/context/LevelUpModalContext';
 
 import { HomeProps } from '@/types'
 
 import { Container } from '@/pages/home.style'
-import LevelUPModal from '@/components/LevelUpModal';
 
 export default function Home(props: HomeProps) {
-  const [isLevelUp, setIsLevelUp] = useState(true)
+  const { isLevelUp } = useModal()
 
   return (
     <Container>
@@ -28,13 +30,8 @@ export default function Home(props: HomeProps) {
 }
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
-  const { level, currentXp, challengesCompleted } = ctx.req.cookies;
 
   return {
-    props: {
-      level: Number(level),
-      currentXp: Number(currentXp),
-      challengesCompleted: Number(challengesCompleted)
-    }
+    props: {}
   }
 }
