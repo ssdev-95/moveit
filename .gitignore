@@ -35,3 +35,6 @@ yarn-error.log*
 
 #backup
 .old
+
+#Enviroment variables
+next.config.js
