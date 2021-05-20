@@ -1,5 +1,8 @@
 import { createGlobalStyle } from 'styled-components'
 
+import { LevelUpModalContextProvider } from '@/context/LevelUpModalContext'
+import { ChallengesProvider } from '@/context/ChallengesContext'
+
 import { background, text } from 'root/colors.json'
 
 const GlobalStyle = createGlobalStyle`
@@ -46,12 +49,13 @@ const GlobalStyle = createGlobalStyle`
 `
 
 function MyApp({ Component, pageProps }) {
-
   return (
-    <>
-      <GlobalStyle/>
-      <Component {...pageProps} />
-    </>
+    <LevelUpModalContextProvider>
+      <ChallengesProvider>
+        <GlobalStyle />
+        <Component {...pageProps} />
+      </ChallengesProvider>
+    </LevelUpModalContextProvider>
   )
 }
 
