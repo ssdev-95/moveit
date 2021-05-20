@@ -8,4 +8,8 @@ export const DashContainer = styled.div`
 
     align-items: center;
     padding: 1rem 2.5rem;
+
+    @media(max-width: 1024px) {
+        flex-direction: column;
+    }
 `
