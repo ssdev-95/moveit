@@ -1,17 +1,16 @@
 import { ReactNode } from "react";
 
 export interface Challenge {
-  type: string;
-  description: string;
-  amount: number;
-  price: number;
-  accessibility: number;
-  participants: number;
-  link: string;
-  key: string;
+  type?: string;
+  description?: string;
+  amount?: number;  
+  uuid?: string;
 }
 
-export interface ChallengesContextData {}
+export interface ChallengesContextData {
+  challenge: Challenge;
+  parseChallenge: ()=>void;
+}
 
 export interface ChallengesProviderProps {
   children: ReactNode;
