@@ -1,12 +1,16 @@
 import React from 'react'
 
+import useModal from '@/context/LevelUpModalContext';
+
 import { Modal, Overlay } from '@/components/LevelUpModal/levelupmodal.style'
 
 export default function LevelUPModal() {
+    const { toggleLevelUpModal } = useModal()
+
     return (
         <Overlay>
             <Modal>
-                <p>x</p>
+                <p onClick={toggleLevelUpModal}>x</p>
                 <h6>1</h6>
                 <span>Congratulations</span>
                 <span>You've reached a new level.</span>
