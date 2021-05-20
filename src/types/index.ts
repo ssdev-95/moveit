@@ -17,18 +17,22 @@ export interface ChallengesProviderProps {
   children: ReactNode;
 }
 
+export interface ChallengesCompletedProps {
+  challengesCompleted: number;
+}
 export interface CountdownContextData {}
 
 export interface CountdownProviderProps {
   children: ReactNode;
 }
 
-export interface HomeProps {
-  level: number;
-  currentXp: number;
-  challengesCompleted: number;
+export interface HomeProps {}
+
+export interface LevelUpModalContextData {
+  isLevelUp: boolean;
+  toggleLevelUpModal: ()=>void;
 }
 
-export interface ChallengesCompletedProps {
-  challengesCompleted: number;
+export interface LevelUpModalProviderProps {
+  children: ReactNode;
 }
