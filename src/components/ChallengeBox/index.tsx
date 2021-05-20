@@ -5,7 +5,7 @@ import useChallenge from '@/context/ChallengesContext'
 import { ChallengeContainer, ChallengeDetail, Header, Actions } from '@/components/ChallengeBox/challengebox.style'
 
 export default function ChallengeBox() {
-    const { challenge, hasChallenge } = useChallenge()
+    const { challenge, hasChallenge, handleChallengeEnd } = useChallenge()
     
     const emptyChallenge = (
         <>
@@ -26,8 +26,8 @@ export default function ChallengeBox() {
                 <span>{challenge.description}</span>
             </ChallengeDetail>
             <Actions>
-                <button>Failed</button>
-                <button>Succeded</button>
+                <button type="button" onClick={()=>handleChallengeEnd(0, false)} >Failed</button>
+                <button type="button" onClick={()=>handleChallengeEnd(challenge.amount, true)} >Succeded</button>
             </Actions>
         </>
     )

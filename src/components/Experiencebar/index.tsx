@@ -1,7 +1,8 @@
 import { Header, Bar, Progress, CurrentExperience } from '@/components/Experiencebar/experiencebar.style'
-export default function Experiencebar() {
-  const currentXP = 0
-  const nextLevelXP = 400
+
+import { ExperiencBarProps } from '@/types'
+
+export default function Experiencebar({ currentXP, nextLevelXP }:ExperiencBarProps) {
   
   return (
     <Header>

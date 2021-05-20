@@ -8,6 +8,8 @@ const ChallengesContext = createContext({} as ChallengesContextData);
 export const  ChallengesProvider = ({ children}: ChallengesProviderProps) => {
     const [challenge, setChallenge] = useState<Challenge>({})
     const [hasChallenge, setHasChallenge] = useState(false)
+    const [completedChallenges, setCompletedChallenges] = useState(0)
+    const [userXP, setUserXP] = useState(0)
     // const types = [
     //     "busywork",
     //     "charity",
@@ -36,9 +38,22 @@ export const  ChallengesProvider = ({ children}: ChallengesProviderProps) => {
         setChallenge(challenge)
     }
 
-    useEffect(()=>{
+    const handleChallengeEnd = (XPEarned:number, isChallengeCompleted:boolean) => {
+        setChallenge({})
+        setHasChallenge(false)
+        setUserXP(userXP+XPEarned)
+        isChallengeCompleted?
+            setCompletedChallenges(completedChallenges+1) :
+            setCompletedChallenges(completedChallenges+0)
+    }
+
+    const initChallenge = () => {
         parseChallenge()
-        setHasChallenge(!hasChallenge)
+        setHasChallenge(true)
+    }
+
+    useEffect(()=>{
+        initChallenge()
     }, [])
 
     return (
@@ -46,7 +61,8 @@ export const  ChallengesProvider = ({ children}: ChallengesProviderProps) => {
           value={{
               hasChallenge,
               challenge,
-              parseChallenge
+              initChallenge,
+              handleChallengeEnd
           }}>
             { children }
         </ChallengesContext.Provider>

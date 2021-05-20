@@ -4,20 +4,14 @@ import CompletedChallenges from '@/components/CompletedChallenges'
 import Countdown from '@/components/Countdown'
 
 import { ProfileContainer, Avatar } from '@/components/Profile/profile.style'
+import { ProfileProps } from 'root/src/types';
 
-export default function Profile() {
-    const user = {
-        name: 'Salomao de Souza',
-        picURI: 'https://github.com/xSallus.png',
-        currentLevel: 1,
-        completedChallenges: 0
-
-    }
+export default function Profile({ user }: ProfileProps) {
 
     return(
         <ProfileContainer>
             <Avatar>
-                <img src={user.picURI} alt="Profile avatar"/>
+                <img src={user.profilePic} alt="Profile avatar"/>
                 <div>
                     <span>{user.name}</span>
                     <div>
@@ -27,7 +21,7 @@ export default function Profile() {
                 </div>
             </Avatar>
             <CompletedChallenges
-              challengesCompleted={user.completedChallenges}
+              challengesCompleted={user.challengesCompleted}
             />
             <Countdown />
         </ProfileContainer>
