@@ -12,8 +12,12 @@ import { HomeProps } from '@/types'
 
 import { Container } from '@/pages/home.style'
 
-export default function Home(props: HomeProps) {
+export default function Home({ user }: HomeProps) {
   const { isLevelUp } = useModal()
+  
+  console.log(user)
+
+  const { currentXP, nextLevelXP } = user
 
   return (
     <Container>
@@ -23,15 +27,18 @@ export default function Home(props: HomeProps) {
       <Head>
         <title>Move.it</title>
       </Head>
-      <Experiencebar />
-      <Dashboard />
+      <Experiencebar currentXP={currentXP} nextLevelXP={nextLevelXP} />
+      <Dashboard user={user} />
     </Container>
   )
 }
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  const { user } = ctx.req.cookies
 
   return {
-    props: {}
+    props: {
+      user
+    }
   }
 }

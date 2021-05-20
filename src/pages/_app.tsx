@@ -4,6 +4,10 @@ import { LevelUpModalContextProvider } from '@/context/LevelUpModalContext'
 import { ChallengesProvider } from '@/context/ChallengesContext'
 
 import { background, text } from 'root/colors.json'
+import React from 'react'
+import { ProfileProvider } from '@/context/ProfileContext'
+
+import { CookiesProvider } from 'react-cookie'
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -50,12 +54,16 @@ const GlobalStyle = createGlobalStyle`
 
 function MyApp({ Component, pageProps }) {
   return (
-    <LevelUpModalContextProvider>
-      <ChallengesProvider>
-        <GlobalStyle />
-        <Component {...pageProps} />
-      </ChallengesProvider>
-    </LevelUpModalContextProvider>
+    <CookiesProvider>
+      <LevelUpModalContextProvider>
+        <ChallengesProvider>
+          <ProfileProvider>
+            <GlobalStyle />
+            <Component {...pageProps} />
+          </ProfileProvider>
+        </ChallengesProvider>
+      </LevelUpModalContextProvider>
+    </CookiesProvider>
   )
 }
 
