@@ -5,7 +5,7 @@ import { LevelUpModalContextData, LevelUpModalProviderProps } from '@/types'
 export const LevelUpModalContext = createContext({} as LevelUpModalContextData)
 
 export const LevelUpModalContextProvider = ({ children }: LevelUpModalProviderProps) => {
-    const [isLevelUp, setIsLevelUp] = useState(true)
+    const [isLevelUp, setIsLevelUp] = useState(false)
 
     const toggleLevelUpModal = () => {
         setIsLevelUp(!isLevelUp)
