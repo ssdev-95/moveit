@@ -5,11 +5,13 @@ export interface Challenge {
   description?: string;
   amount?: number;  
   uuid?: string;
+  pic?: string;
 }
 
 export interface ChallengesContextData {
+  hasChallenge: boolean;
   challenge: Challenge;
-  parseChallenge: ()=>void;
+  parseChallenge: ()=>Promise<void>;
 }
 
 export interface ChallengesProviderProps {
