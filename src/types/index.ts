@@ -18,6 +18,8 @@ export interface User {
 }
 
 export interface ChallengesContextData {
+  userXP: number;
+  completedChallenges: number;
   hasChallenge: boolean;
   challenge: Challenge;
   initChallenge: ()=>void;
@@ -28,9 +30,6 @@ export interface ChallengesProviderProps {
   children: ReactNode;
 }
 
-export interface ChallengesCompletedProps {
-  challengesCompleted: number;
-}
 export interface CountdownContextData {
   hasFinished: boolean;
   isActive: boolean;
@@ -58,9 +57,7 @@ export interface LevelUpModalProviderProps {
   children: ReactNode;
 }
 
-export interface ProfileData {
-  updateProfile: (level:number, xp:number, numberOfChallenges:number)=>void;
-}
+export interface ProfileData {}
 
 export interface ProfileProviderProps {
   children: ReactNode;

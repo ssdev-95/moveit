@@ -14,9 +14,8 @@ export const  ChallengesProvider = ({ children}: ChallengesProviderProps) => {
     const [hasChallenge, setHasChallenge] = useState(false)
     const [completedChallenges, setCompletedChallenges] = useState(0)
     const [userXP, setUserXP] = useState(0)
-
-    const { updateProfile } = useProfile()
-    const { upALevel, currentLevel } = useModal()
+    
+    const { upALevel } = useModal()
     const [ cookies, setCookie ] = useCookies(['user'])
     const user = cookies.user
 
@@ -63,13 +62,11 @@ export const  ChallengesProvider = ({ children}: ChallengesProviderProps) => {
         setHasChallenge(true)
     }
 
-    useEffect(()=>{
-        updateProfile(currentLevel, userXP, completedChallenges)
-    }, [userXP, currentLevel, completedChallenges])
-
     return (
         <ChallengesContext.Provider
           value={{
+              userXP,
+              completedChallenges,
               hasChallenge,
               challenge,
               initChallenge,
