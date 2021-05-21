@@ -31,7 +31,13 @@ export interface ChallengesProviderProps {
 export interface ChallengesCompletedProps {
   challengesCompleted: number;
 }
-export interface CountdownContextData {}
+export interface CountdownContextData {
+  hasFinished: boolean;
+  isActive: boolean;
+  splitTime: string[];
+  startCountdown: ()=>void;
+  resetCountdown: ()=>void;
+}
 
 export interface CountdownProviderProps {
   children: ReactNode;

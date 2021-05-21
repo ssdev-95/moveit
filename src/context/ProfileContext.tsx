@@ -13,7 +13,7 @@ export const ProfileProvider = ({ children }: ProfileProviderProps) => {
         currentXP: 0,
         profilePic: 'https://github.com/xSallus.png',
         challengesCompleted: 0,
-        nextLevelXP: 400
+        nextLevelXP: Math.pow((1+1)*4, 2)
     })
 
     const [ cookies, setCookie ] = useCookies(['user'])

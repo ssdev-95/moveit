@@ -6,7 +6,7 @@ export const LevelUpModalContext = createContext({} as LevelUpModalContextData)
 
 export const LevelUpModalContextProvider = ({ children }: LevelUpModalProviderProps) => {
     const [isLevelUp, setIsLevelUp] = useState(false)
-    const [currentLevel, setCurrentLevel] = useState(0)
+    const [currentLevel, setCurrentLevel] = useState(1)
 
     const toggleLevelUpModal = () => {
         setIsLevelUp(!isLevelUp)

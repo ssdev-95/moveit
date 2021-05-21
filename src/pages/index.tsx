@@ -14,8 +14,6 @@ import { Container } from '@/pages/home.style'
 
 export default function Home({ user }: HomeProps) {
   const { isLevelUp } = useModal()
-  
-  console.log(user)
 
   const { currentXP, nextLevelXP } = user
 
