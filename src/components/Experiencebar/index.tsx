@@ -7,12 +7,17 @@ import { ExperiencBarProps } from '@/types'
 
 export default function Experiencebar({ currentXP, level }:ExperiencBarProps) {
   const [cookies, setCookie] = useCookies(['profile'])
-  const [ nextLevelXP, setNextLevelXP] = useState(Math.pow((level+1)*4, 2))
+  const { profile } = cookies
+  const [ nextLevelXP, setNextLevelXP] = useState(0)
     // const nextLevelXP = Math.pow((level+1)*4, 2)
 
     useEffect(()=>{
       setNextLevelXP(Math.pow((level+1)*4, 2))
     }, [])
+
+    useEffect(()=>{
+      setNextLevelXP(Math.pow((profile.level+1)*4, 2))
+    },[profile])
 
     //NextLeveXP Base Calculus
     //Math.pow((userData.level+1)*4, 2)
@@ -21,10 +26,10 @@ export default function Experiencebar({ currentXP, level }:ExperiencBarProps) {
     <Header>
       <span>0 xp</span>
       <Bar>
-        <Progress style={{ width: `${(currentXP/nextLevelXP)*100}%` }} />
+        <Progress style={{ width: `${(profile.baseXP/nextLevelXP)*100}%` }} />
       </Bar>
       <span>{nextLevelXP} xp</span>
-      <CurrentExperience>{currentXP} xp</CurrentExperience>
+      <CurrentExperience>{profile.baseXP} xp</CurrentExperience>
     </Header>
   )
 }

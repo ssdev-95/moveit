@@ -3,7 +3,7 @@ import React from  'react'
 import { CountdownContainer, Timer, Digit, Button } from '@/components/Countdown/countdown.style'
 import { gray_line } from 'root/colors.json'
 
-import { useCountdown } from 'root/src/components/context/CountdownContext'
+import { useCountdown } from 'root/src/context/CountdownContext'
 
 export default function Countdown() {
     const { splitTime, startCountdown } = useCountdown();

@@ -6,8 +6,8 @@ import Experiencebar from '@/components/Experiencebar'
 import Dashboard from '@/components/Dashboard';
 import LevelUPModal from '@/components/LevelUpModal';
 
-import useModal from 'root/src/components/context/LevelUpModalContext';
-import useProfile from 'root/src/components/context/ProfileContext';
+import useModal from 'root/src/context/LevelUpModalContext';
+import useProfile from 'root/src/context/ProfileContext';
 
 import { HomeProps } from '@/types'
 

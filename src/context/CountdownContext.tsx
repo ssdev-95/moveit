@@ -1,7 +1,7 @@
 import { createContext, useState, useEffect, useContext } from 'react';
 
 import { CountdownContextData, ProviderProps } from '@/types'
-import useChallenge from 'root/src/components/context/ChallengesContext';
+import useChallenge from 'root/src/context/ChallengesContext';
 
 const CountdownContext = createContext({} as CountdownContextData);
 

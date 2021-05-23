@@ -1,7 +1,7 @@
 import React from 'react'
 
-import useModal from 'root/src/components/context/LevelUpModalContext';
-import useProfile from 'root/src/components/context/ProfileContext'
+import useModal from 'root/src/context/LevelUpModalContext';
+import useProfile from 'root/src/context/ProfileContext'
 
 import { Modal, Overlay } from '@/components/LevelUpModal/levelupmodal.style'
 
