@@ -2,10 +2,10 @@ import { createContext, useState, useContext, useEffect } from 'react'
 import axios from 'axios'
 
 import { ChallengesContextData, ChallengesProviderProps, Challenge } from '@/types'
-import useModal from '@/context/LevelUpModalContext';
-import useProfile from '@/context/ProfileContext'
 
-import { useCookies } from 'react-cookie';
+// import useModal from '@/context/LevelUpModalContext';
+// import useProfile from '@/context/ProfileContext'
+// import { useCookies } from 'react-cookie';
 
 const ChallengesContext = createContext({} as ChallengesContextData);
 
@@ -15,9 +15,9 @@ export const  ChallengesProvider = ({ children}: ChallengesProviderProps) => {
     const [completedChallenges, setCompletedChallenges] = useState(0)
     const [userXP, setUserXP] = useState(0)
     
-    const { upALevel } = useModal()
-    const [ cookies, setCookie ] = useCookies(['user'])
-    const user = cookies.user
+    // const { upALevel } = useModal()
+    // const [ cookies, setCookie ] = useCookies(['user'])
+    // const user = cookies.user
 
     const parseChallenge = async () => {
         const uri = process.env.API_URI
@@ -36,19 +36,19 @@ export const  ChallengesProvider = ({ children}: ChallengesProviderProps) => {
     }
 
     const handleChallengeEnd = (XPEarned:number, isChallengeCompleted:boolean) => {
-        let finalXP:number
+        let finalXP:number = 100
 
         setChallenge({})
         setHasChallenge(false)
         
-        if(finalXP>=user.nextLevelXP) {
-            finalXP = finalXP-user.nextLevelXP
-            upALevel()
-        } else {
-            finalXP = userXP+XPEarned
-        }
+        // if(finalXP>=user.nextLevelXP) {
+        //     finalXP = finalXP-user.nextLevelXP
+        //     // upALevel()
+        // } else {
+        //     finalXP = userXP+XPEarned
+        // }
         
-        setUserXP(finalXP)
+        setUserXP(finalXP+XPEarned)
 
         if(isChallengeCompleted) {
             setCompletedChallenges(completedChallenges+1) 

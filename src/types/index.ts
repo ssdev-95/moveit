@@ -10,11 +10,10 @@ export interface Challenge {
 
 export interface User {
   name: string;
-  currentLevel: number;
-  currentXP: number;
-  profilePic: string;
+  level: number;
+  baseXP: number;
+  avatar: string;
   challengesCompleted: number;
-  nextLevelXP: number;
 }
 
 export interface ChallengesContextData {
@@ -47,9 +46,7 @@ export interface HomeProps {
 }
 
 export interface LevelUpModalContextData {
-  currentLevel: number;
-  isLevelUp: boolean;
-  upALevel: ()=>void;
+  isLevelingUp: boolean;
   toggleLevelUpModal: ()=>void;
 }
 

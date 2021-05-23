@@ -5,11 +5,11 @@ import { LevelUpModalContextData, LevelUpModalProviderProps } from '@/types'
 export const LevelUpModalContext = createContext({} as LevelUpModalContextData)
 
 export const LevelUpModalContextProvider = ({ children }: LevelUpModalProviderProps) => {
-    const [isLevelUp, setIsLevelUp] = useState(false)
+    const [isLevelingUp, setIsLevelingUp] = useState(false)
     const [currentLevel, setCurrentLevel] = useState(1)
 
     const toggleLevelUpModal = () => {
-        setIsLevelUp(!isLevelUp)
+        setIsLevelingUp(!isLevelingUp)
     }
 
     const upALevel = () => {
@@ -19,9 +19,7 @@ export const LevelUpModalContextProvider = ({ children }: LevelUpModalProviderPr
     return (
         <LevelUpModalContext.Provider
           value={{
-            currentLevel,
-            isLevelUp,
-            upALevel,
+            isLevelingUp,
             toggleLevelUpModal
           }}
         >{ children }</LevelUpModalContext.Provider>
