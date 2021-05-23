@@ -27,7 +27,7 @@ export default function Home({ user }: HomeProps) {
       <Head>
         <title>Move.it</title>
       </Head>
-      <Experiencebar currentXP={user.baseXP} level={user.level} />
+      <Experiencebar level={user.level} />
       <Dashboard user={user} />
     </Container>
   )

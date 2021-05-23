@@ -60,6 +60,5 @@ export interface DashboardProps {
 }
 
 export interface ExperiencBarProps {
-  currentXP: number;
   level: number;
 }
