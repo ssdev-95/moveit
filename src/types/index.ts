@@ -12,6 +12,7 @@ export interface User {
   name: string;
   level: number;
   baseXP: number;
+  nextLevelXP: number;
   avatar: string;
   completedChallenges: number;
 }
@@ -24,6 +25,7 @@ export interface ProfileContextData {
   userData: User,
   levelUP: ()=>void;
   xpUP: (xp:number)=>void;
+  updateProfileData: (newName: string, newAvatar: string)=>void;
   completeChallenge: ()=>void;
 }
 
@@ -31,7 +33,7 @@ export interface ChallengesContextData {
   hasChallenge: boolean;
   challenge: Challenge;
   initChallenge: ()=>void;
-  handleChallengeEnd: (XPEarned:number, isChallengeCompleted:boolean)=>void;
+  handleChallengeEnd: (isChallengeCompleted:boolean, XPEarned?:number)=>void;
 }
 
 export interface CountdownContextData {
@@ -47,6 +49,11 @@ export interface LevelUpModalContextData {
   toggleLevelUpModal: ()=>void;
 }
 
+export interface ExperiencebarContextData {
+  progress: string;
+  nextLevelXP: number;
+}
+
 export interface ProfileProps {
   user: User;
 }
@@ -57,8 +64,4 @@ export interface HomeProps {
 
 export interface DashboardProps {
   user: User;
-}
-
-export interface ExperiencBarProps {
-  level: number;
 }

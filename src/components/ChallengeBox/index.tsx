@@ -1,6 +1,6 @@
 import React from 'react'
 
-import useChallenge from 'root/src/context/ChallengesContext'
+import useChallenge from '@/context/ChallengesContext'
 
 import { ChallengeContainer, ChallengeDetail, Header, Actions } from '@/components/ChallengeBox/challengebox.style'
 
@@ -26,8 +26,8 @@ export default function ChallengeBox() {
                 <span>{challenge.description}</span>
             </ChallengeDetail>
             <Actions>
-                <button type="button" onClick={()=>handleChallengeEnd(0, false)} >Failed</button>
-                <button type="button" onClick={()=>handleChallengeEnd(challenge.amount, true)} >Succeded</button>
+                <button type="button" onClick={()=>handleChallengeEnd(false)} >Failed</button>
+                <button type="button" onClick={()=>handleChallengeEnd(true, challenge.amount)} >Succeded</button>
             </Actions>
         </>
     )

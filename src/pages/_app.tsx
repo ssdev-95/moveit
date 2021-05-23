@@ -1,12 +1,12 @@
 import { createGlobalStyle } from 'styled-components'
+import React from 'react'
 
-import { LevelUpModalContextProvider } from 'root/src/context/LevelUpModalContext'
-import { ChallengesProvider } from 'root/src/context/ChallengesContext'
+import { LevelUpModalContextProvider } from '@/context/LevelUpModalContext'
+import { ChallengesProvider } from '@/context/ChallengesContext'
+import { CountdownProvider } from '@/context/CountdownContext'
+import { ProfileProvider } from '@/context/ProfileContext'
 
 import { background, text } from 'root/colors.json'
-import React from 'react'
-import { ProfileProvider } from 'root/src/context/ProfileContext'
-import { CountdownProvider } from 'root/src/context/CountdownContext'
 
 import { CookiesProvider } from 'react-cookie'
 
@@ -56,16 +56,16 @@ const GlobalStyle = createGlobalStyle`
 function MyApp({ Component, pageProps }) {
   return (
     <CookiesProvider>
-      <ProfileProvider>
-        <LevelUpModalContextProvider>
+      <LevelUpModalContextProvider>
+        <ProfileProvider>
           <ChallengesProvider>
             <CountdownProvider>
               <GlobalStyle />
               <Component {...pageProps} />
             </CountdownProvider>
           </ChallengesProvider>
-        </LevelUpModalContextProvider>
-      </ProfileProvider>
+        </ProfileProvider>
+      </LevelUpModalContextProvider>
     </CookiesProvider>
   )
 }

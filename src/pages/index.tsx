@@ -6,8 +6,8 @@ import Experiencebar from '@/components/Experiencebar'
 import Dashboard from '@/components/Dashboard';
 import LevelUPModal from '@/components/LevelUpModal';
 
-import useModal from 'root/src/context/LevelUpModalContext';
-import useProfile from 'root/src/context/ProfileContext';
+import useModal from '@/context/LevelUpModalContext';
+import useProfile from '@/context/ProfileContext';
 
 import { HomeProps } from '@/types'
 
@@ -17,8 +17,6 @@ export default function Home({ user }: HomeProps) {
   const { isLevelingUp } = useModal()
   const { userData } = useProfile()
 
-  // const { currentXP, nextLevelXP } = user
-
   return (
     <Container>
       {
@@ -27,18 +25,28 @@ export default function Home({ user }: HomeProps) {
       <Head>
         <title>Move.it</title>
       </Head>
-      <Experiencebar level={user.level} />
-      <Dashboard user={user} />
+      <Experiencebar />
+      <Dashboard user={user || userData} />
     </Container>
   )
 }
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const { profile } = ctx.req.cookies
+  const user = {
+    name: 'Salomao Souza',
+    avatar: 'https://github.com/xSallus.png',
+    level: 1,
+    baseXP: 0,
+    nextLevelXP: 16,
+    completedChallenges: 0
+  }
+
+  console.log(profile)
 
   return {
     props: {
-      user: JSON.parse(profile)
+      user: user
     }
   }
 }
