@@ -1,17 +1,20 @@
 import React from 'react'
 
-import useModal from '@/context/LevelUpModalContext';
+import useModal from 'root/src/components/context/LevelUpModalContext';
+import useProfile from 'root/src/components/context/ProfileContext'
 
 import { Modal, Overlay } from '@/components/LevelUpModal/levelupmodal.style'
 
 export default function LevelUPModal() {
     const { toggleLevelUpModal } = useModal()
 
+    const { userData:{level} } = useProfile()
+
     return (
         <Overlay>
             <Modal>
                 <p onClick={toggleLevelUpModal}>x</p>
-                <h6>1</h6>
+                <h6>{level}</h6>
                 <span>Congratulations</span>
                 <span>You've reached a new level.</span>
                 <button>

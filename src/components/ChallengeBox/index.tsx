@@ -1,6 +1,6 @@
 import React from 'react'
 
-import useChallenge from '@/context/ChallengesContext'
+import useChallenge from 'root/src/components/context/ChallengesContext'
 
 import { ChallengeContainer, ChallengeDetail, Header, Actions } from '@/components/ChallengeBox/challengebox.style'
 

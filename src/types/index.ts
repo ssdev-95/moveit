@@ -13,20 +13,25 @@ export interface User {
   level: number;
   baseXP: number;
   avatar: string;
-  challengesCompleted: number;
+  completedChallenges: number;
+}
+
+export interface ProviderProps {
+  children: ReactNode;
+}
+
+export interface ProfileContextData {
+  userData: User,
+  levelUP: ()=>void;
+  xpUP: (xp:number)=>void;
+  completeChallenge: ()=>void;
 }
 
 export interface ChallengesContextData {
-  userXP: number;
-  completedChallenges: number;
   hasChallenge: boolean;
   challenge: Challenge;
   initChallenge: ()=>void;
   handleChallengeEnd: (XPEarned:number, isChallengeCompleted:boolean)=>void;
-}
-
-export interface ChallengesProviderProps {
-  children: ReactNode;
 }
 
 export interface CountdownContextData {
@@ -37,30 +42,16 @@ export interface CountdownContextData {
   resetCountdown: ()=>void;
 }
 
-export interface CountdownProviderProps {
-  children: ReactNode;
-}
-
-export interface HomeProps {
-  user: User;
-}
-
 export interface LevelUpModalContextData {
   isLevelingUp: boolean;
   toggleLevelUpModal: ()=>void;
 }
 
-export interface LevelUpModalProviderProps {
-  children: ReactNode;
-}
-
-export interface ProfileData {}
-
-export interface ProfileProviderProps {
-  children: ReactNode;
-}
-
 export interface ProfileProps {
+  user: User;
+}
+
+export interface HomeProps {
   user: User;
 }
 
@@ -70,5 +61,5 @@ export interface DashboardProps {
 
 export interface ExperiencBarProps {
   currentXP: number;
-  nextLevelXP: number;
+  level: number;
 }

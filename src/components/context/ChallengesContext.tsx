@@ -1,7 +1,7 @@
 import { createContext, useState, useContext, useEffect } from 'react'
 import axios from 'axios'
 
-import { ChallengesContextData, ChallengesProviderProps, Challenge } from '@/types'
+import { ChallengesContextData, ProviderProps, Challenge } from '@/types'
 
 // import useModal from '@/context/LevelUpModalContext';
 // import useProfile from '@/context/ProfileContext'
@@ -9,11 +9,9 @@ import { ChallengesContextData, ChallengesProviderProps, Challenge } from '@/typ
 
 const ChallengesContext = createContext({} as ChallengesContextData);
 
-export const  ChallengesProvider = ({ children}: ChallengesProviderProps) => {
+export const  ChallengesProvider = ({ children}: ProviderProps) => {
     const [challenge, setChallenge] = useState<Challenge>({})
     const [hasChallenge, setHasChallenge] = useState(false)
-    const [completedChallenges, setCompletedChallenges] = useState(0)
-    const [userXP, setUserXP] = useState(0)
     
     // const { upALevel } = useModal()
     // const [ cookies, setCookie ] = useCookies(['user'])
@@ -47,14 +45,6 @@ export const  ChallengesProvider = ({ children}: ChallengesProviderProps) => {
         // } else {
         //     finalXP = userXP+XPEarned
         // }
-        
-        setUserXP(finalXP+XPEarned)
-
-        if(isChallengeCompleted) {
-            setCompletedChallenges(completedChallenges+1) 
-        } else {
-            setCompletedChallenges(completedChallenges+0)
-        }
     }
 
     const initChallenge = () => {
@@ -65,8 +55,6 @@ export const  ChallengesProvider = ({ children}: ChallengesProviderProps) => {
     return (
         <ChallengesContext.Provider
           value={{
-              userXP,
-              completedChallenges,
               hasChallenge,
               challenge,
               initChallenge,

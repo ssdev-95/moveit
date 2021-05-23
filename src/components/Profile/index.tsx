@@ -11,17 +11,17 @@ export default function Profile({ user }: ProfileProps) {
     return(
         <ProfileContainer>
             <Avatar>
-                <img src={user.profilePic} alt="Profile avatar"/>
+                <img src={user.avatar} alt="Profile avatar"/>
                 <div>
                     <span>{user.name}</span>
                     <div>
                         <img src="icons/level.svg" alt="Level icon" />
-                        <span>Level {user.currentLevel}</span>
+                        <span>Level {user.level}</span>
                     </div>
                 </div>
             </Avatar>
             <CompletedChallenges
-              challengesCompleted={user.challengesCompleted}
+              challengesCompleted={user.completedChallenges}
             />
             <Countdown />
         </ProfileContainer>

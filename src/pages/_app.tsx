@@ -1,12 +1,12 @@
 import { createGlobalStyle } from 'styled-components'
 
-import { LevelUpModalContextProvider } from '@/context/LevelUpModalContext'
-import { ChallengesProvider } from '@/context/ChallengesContext'
+import { LevelUpModalContextProvider } from 'root/src/components/context/LevelUpModalContext'
+import { ChallengesProvider } from 'root/src/components/context/ChallengesContext'
 
 import { background, text } from 'root/colors.json'
 import React from 'react'
-import { ProfileProvider } from '@/context/ProfileContext'
-import { CountdownProvider } from '@/context/CountdownContext'
+import { ProfileProvider } from 'root/src/components/context/ProfileContext'
+import { CountdownProvider } from 'root/src/components/context/CountdownContext'
 
 import { CookiesProvider } from 'react-cookie'
 

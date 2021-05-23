@@ -1,19 +1,13 @@
 import { createContext, useContext, useState } from 'react'
-
-import { LevelUpModalContextData, LevelUpModalProviderProps } from '@/types'
+import { LevelUpModalContextData, ProviderProps } from '@/types'
 
 export const LevelUpModalContext = createContext({} as LevelUpModalContextData)
 
-export const LevelUpModalContextProvider = ({ children }: LevelUpModalProviderProps) => {
-    const [isLevelingUp, setIsLevelingUp] = useState(false)
-    const [currentLevel, setCurrentLevel] = useState(1)
+export const LevelUpModalContextProvider = ({ children }: ProviderProps) => {
+    const [isLevelingUp, setIsLevelingUp] = useState(true)
 
     const toggleLevelUpModal = () => {
         setIsLevelingUp(!isLevelingUp)
-    }
-
-    const upALevel = () => {
-      setCurrentLevel(currentLevel+1)
     }
 
     return (
