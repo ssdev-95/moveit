@@ -45,6 +45,11 @@ export const ProfileProvider = ({ children }: ProviderProps) => {
     const [ cookies, setCookie ]= useCookies(['profile'])
 
     useEffect(()=>{
+        const { profile } = cookies
+        !profile && setCookie('profile', JSON.stringify(userData))
+    }, [])
+
+    useEffect(()=>{
         const { nextLevelXP, baseXP } = userData
 
         if(baseXP>=nextLevelXP)  {
@@ -54,13 +59,7 @@ export const ProfileProvider = ({ children }: ProviderProps) => {
                 baseXP: baseXP-nextLevelXP
             })
         }
-    }, [userData])
 
-    useEffect(()=>{
-        setCookie('profile', JSON.stringify(userData))
-    }, [])
-
-    useEffect(()=>{
         setCookie('profile', JSON.stringify(userData))
     }, [userData])
 
