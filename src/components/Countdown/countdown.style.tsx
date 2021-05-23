@@ -55,6 +55,10 @@ export const Button = styled.button`
 
     border: none;
     border-radius: 6px;
+
+    &:hover {
+        filter: brightness(.87);
+    }
 `
 
 // .countdownContainer > div {
