@@ -19,15 +19,6 @@ export const ProfileProvider = ({ children }: ProviderProps) => {
 
     const { toggleLevelUpModal } = useModal()
 
-    const levelUP = () => {
-        setUserData({
-            ...userData,
-            level: userData.level+1,
-            nextLevelXP: Math.pow((userData.level+2)*4, 2)
-        })
-        toggleLevelUpModal()
-    }
-
     const xpUP = (xp:number) => {
         setUserData({
             ...userData,
@@ -53,11 +44,14 @@ export const ProfileProvider = ({ children }: ProviderProps) => {
         const { nextLevelXP, baseXP } = userData
 
         if(baseXP>=nextLevelXP)  {
-            levelUP()
             setUserData({
                 ...userData,
-                baseXP: baseXP-nextLevelXP
+                baseXP: baseXP-nextLevelXP,
+                level: userData.level+1,
+                nextLevelXP: Math.pow((userData.level+2)*4, 2)
             })
+        
+            toggleLevelUpModal()
         }
 
         setCookie('profile', JSON.stringify(userData))
@@ -75,7 +69,6 @@ export const ProfileProvider = ({ children }: ProviderProps) => {
         <ProfileContext.Provider value={{
             userData,
             updateProfileData,
-            levelUP,
             xpUP,
             completeChallenge
         }}>

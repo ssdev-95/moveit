@@ -22,8 +22,7 @@ export interface ProviderProps {
 }
 
 export interface ProfileContextData {
-  userData: User,
-  levelUP: ()=>void;
+  userData: User;
   xpUP: (xp:number)=>void;
   updateProfileData: (newName: string, newAvatar: string)=>void;
   completeChallenge: ()=>void;
