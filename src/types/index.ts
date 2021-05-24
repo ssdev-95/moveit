@@ -65,3 +65,7 @@ export interface HomeProps {
 export interface DashboardProps {
   user: User;
 }
+
+export interface ChallengesCompletedProps {
+  challengesCompleted: number;
+}

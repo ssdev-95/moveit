@@ -2,7 +2,7 @@ import React from 'react'
 
 import useChallenge from '@/context/ChallengesContext'
 
-import { ChallengeContainer, ChallengeDetail, Header, Actions } from '@/components/ChallengeBox/challengebox.style'
+import { ChallengeContainer, ChallengeDetail, Header, Actions } from '@/styles/components/challengebox.style'
 
 export default function ChallengeBox() {
     const { challenge, hasChallenge, handleChallengeEnd } = useChallenge()

@@ -11,7 +11,7 @@ import useProfile from '@/context/ProfileContext';
 
 import { HomeProps } from '@/types'
 
-import { Container } from '@/pages/home.style'
+import { Container } from '@/styles/home.style'
 // 
 export default function Home({ user }: HomeProps) {
   const { isLevelingUp } = useModal()

@@ -2,7 +2,7 @@ import React from  'react'
 
 import { useCountdown } from '@/context/CountdownContext'
 
-import { CountdownContainer, Timer, Digit, Button } from '@/components/Countdown/countdown.style'
+import { CountdownContainer, Timer, Digit, Button } from '@/styles/components/countdown.style'
 import useChallenge from '@/context/ChallengesContext';
 
 import { blue_dark, green, gray_line, red, title, white } from 'root/colors.json'

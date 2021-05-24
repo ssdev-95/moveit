@@ -3,7 +3,7 @@ import React from 'react'
 import useModal from '@/context/LevelUpModalContext';
 import useProfile from '@/context/ProfileContext'
 
-import { Modal, Overlay } from '@/components/LevelUpModal/levelupmodal.style'
+import { Modal, Overlay } from '@/styles/components/levelupmodal.style'
 
 export default function LevelUPModal() {
     const { toggleLevelUpModal } = useModal()

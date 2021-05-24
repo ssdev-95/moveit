@@ -3,7 +3,7 @@ import React from 'react'
 import CompletedChallenges from '@/components/CompletedChallenges'
 import Countdown from '@/components/Countdown'
 
-import { ProfileContainer, Avatar } from '@/components/Profile/profile.style'
+import { ProfileContainer, Avatar } from '@/styles/components/profile.style'
 import { ProfileProps } from 'root/src/types';
 
 export default function Profile({ user }: ProfileProps) {

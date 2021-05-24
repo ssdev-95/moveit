@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Header, Bar, Progress, CurrentExperience } from '@/components/Experiencebar/experiencebar.style'
+import { Header, Bar, Progress, CurrentExperience } from '@/styles/components/experiencebar.style'
 
 import { useCookies } from 'react-cookie'
 

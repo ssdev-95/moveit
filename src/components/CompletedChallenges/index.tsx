@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { CompletedChallengesContainer } from '@/components/CompletedChallenges/completedchallenges.style'
+import { CompletedChallengesContainer } from '@/styles/components/completedchallenges.style'
 
 import { ChallengesCompletedProps } from '@/types'
 
